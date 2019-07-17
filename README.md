@@ -2,6 +2,10 @@
 
 Guided project for **Node DB3** Module.
 
+## Author
+
+Sascha Majewsky
+
 ## Prerequisites
 
 - [SQLite Studio](https://sqlitestudio.pl/index.rvt?act=download) installed.
