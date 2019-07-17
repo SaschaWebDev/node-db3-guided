@@ -13,3 +13,4 @@ Label any relationships between table.
 
 -By splitting endpoints and data access it is easier for developers to grasp and maintain
 -Seperation of concern is also better fulfilled by having the data access logic not in the endpoints
+-Also the database can be changed out now and the endpoints are not affected, only the data access logic
