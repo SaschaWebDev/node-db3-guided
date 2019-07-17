@@ -75,4 +75,14 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+router.get('/:id/posts', (req, res) => {
+  Users.getUsersPosts(req.params.id)
+    .then(posts => {
+      res.status(200).json(posts);
+    })
+    .catch(error => {
+      res.status(500).json({ message: 'We failed you, sorry.' + error });
+    });
+});
+
 module.exports = router;

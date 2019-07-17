@@ -4,6 +4,7 @@ const db = require('../data/db-config.js');
 module.exports = {
   find,
   findById,
+  getUsersPosts,
 };
 
 function find() {
@@ -27,4 +28,19 @@ function findById(id) {
         return null;
       }
     });
+}
+
+function getUsersPosts(id) {
+  // select p.contents as quote, u.username as author
+  // from users as u
+  // inner join posts as p on u.id = p.user_id
+  // Map this into knex!
+  return (
+    db('users as u')
+      // first argument is the table, then ON
+      .innerJoin('posts as p', 'u.id', 'p.user_id')
+      .where({ user_id: id })
+      // no .then() needed
+      .select('p.contents as quote', 'u.username as author')
+  );
 }
